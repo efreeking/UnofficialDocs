@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Sublime Text Unofficial Documentation
+Sublime Text 非官方文档
 =====================================
 
 .. toctree::
