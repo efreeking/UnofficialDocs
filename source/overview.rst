@@ -2,79 +2,78 @@
 概述
 ========
 
-.. warning::
-   本节还在完善中。In time, it will become the start point
-   for this documentation, but until then you can check the :doc:`table of contents <index>`
-   for an overview of all available topics.
+.. 警告::
+   本节还在完善中。迟早，它将会成为本文档的起点，但在此之前，您可以检查
+   :doc:`目录 <index>`了解所有可用主题的概况。
 
 
-Basic Concepts
+基本概念
 ==============
 
-**Start here!**
+**从这里开始!**
 
 
-Search and Replace
+搜索和替换
 ==================
 
-- **General**: :doc:`Overview <overview/search_and_replace_overview>` | :ref:`snr-regexes`
-- **In Buffer**: :ref:`snr-search-buffer` | :ref:`snr-incremental-search-buffer` | :ref:`snr-replace-buffer` | :ref:`snr-tips-buffer`
-- **In Files**: :ref:`snr-search-files` | :ref:`snr-search-scope-files` | :ref:`snr-results-format-files`
+- **一般**: :doc:`概述 <overview/search_and_replace_overview>` | :ref:`snr-regexes`
+- **缓冲区中**: :ref:`snr-search-buffer` | :ref:`snr-incremental-search-buffer` | :ref:`snr-replace-buffer` | :ref:`snr-tips-buffer`
+- **文件中**: :ref:`snr-search-files` | :ref:`snr-search-scope-files` | :ref:`snr-results-format-files`
 
 
-Editing Files
+编辑文件
 =============
 
-- **Multiselection**: Select More | Selecting Lines | Expanding Selection | Jumping to Brackets
-- **Indentation**:
-- **Code Folding**:
-- **Bookmarks**:
-- **Browse Symbols**:
-- **Centering Selection**:
-- **Autocomplete**:
-- **Text Editing**: Overview | Selected Editing Features
-- **Goto**:
-- **Macros**:
+- **多项选择**: 选择更多 | 选择行 | 扩展选择 | 跳转到括号
+- **缩进**:
+- **代码折叠**:
+- **书签**:
+- **浏览符号**:
+- **居中选择内容**:
+- **自动补完**:
+- **文本编辑**: 概述 | 选择的编辑功能
+- **转到**:
+- **宏**:
 
 
-Managing Files
+管理文件
 ==============
 
-- **Goto Anything**: Overview
-- **Sidebar**: Overview | Show Sidebar
-- **Tabs**: Overview
-- **Minimap**: Overview
-- **Layouts**:
-- **Display Modes**: Full Screen | Distraction Free
+- **转到任何位置**: 概述
+- **侧栏**: 概述 | 显示侧栏
+- **标签页**: 概述
+- **小地图**: 概述
+- **布局**:
+- **显示模式**: 全屏 | 无干扰模式
 
 
-Managing Projects
+管理项目
 =================
 
-- **General**: Overview
-- **Using Projects**: Overview
-- **Workspaces**: Overview
+- **一般**: 概述
+- **使用项目**: 概述
+- **工作空间**: 概述
 
 
-Command Line
+命令行
 ============
 
-- **Usage**: OSX | Windows | Linux
+- **用法**: OSX | Windows | Linux
 
 
-Settings
+设置
 ========
 
 \...
 
 
-Customizing Sublime Text
+定制 Sublime Text
 ========================
 
 \...
 
 
-Extending Sublime Text
+扩展 Sublime Text
 ======================
 
 \...
