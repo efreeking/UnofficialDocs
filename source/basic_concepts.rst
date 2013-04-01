@@ -1,167 +1,123 @@
 ==============
-Basic Concepts
+基本概念
 ==============
 
-Here we'll explain concepts that the reader needs to be familiar with in order
-to fully understand the contents of this guide.
+这里我们将会解释一些读者需要熟悉的以便能够完全明白本指南的内容的概念。
 
-Conventions in This Guide
+本指南的惯例
 ==========================
 
-This guide is written from the perspective of a Windows user, but most
-instructions should only require trivial changes to work on other platforms.
+本指南是从 Windows 用户的角度来编写的，但是大部分指令应该只需进行一些小小的修改就可以在其它平台上运行。
 
-Relative paths (e. g. *Packages/User*) start at the *data directory* unless
-otherwise noted. The *data directory* is explained further below.
+相对路径 (如 *Packages/User*) 开始于 *data 目录* 除非另外说明。 *data 目录*会在下面进一步说明。
 
-We assume default key bindings when indicating keyboard shortcuts. Due to the
-way Sublime Text maps keys to commands, **some key bindings won't match your
-locale's keyboard layout**.
+我们在指出快捷键时假设为默认按键组合。由于 Sublime Text 映射按键到命令的方式，**某些按键绑定可能不符合您的地区的键盘布局**。
 
 
-With Great Power Comes Lots of Questions
+伴随强大的功能而来的是大量的问题
 ========================================
 
-Sublime Text is a very extensible and customizable editor. It does many things
-out of the box, but if you spend some time tailoring it to your exact needs,
-it will give you superpowers. This guide will teach you all you need to know
-to configure Sublime Text.
+Sublime Text 是一个非常具有可扩展和可定制功能的编辑器。它开箱即可完成很多的事情，但是如果您能够花一点时间来针对您的额外需求对其进行定制，那么它将会给您超能力。本指南将教导您所有您配置 Sublime Text 所需的知识。
 
-In the following paragraphs, we'll outline some aspects that won't click in
-your mind until you've spent some time using Sublime Text. Keep exploring the
-editor and looking around in this guide, and everything will fall into place
-at some point.
+在下面的段落中，我们将会概述某些不会在您脑海中留下的方面，除非您已经花了时间使用 Sublime Text。
+不断的探索编辑器并在本指南中到处看看，一切就会在某刻水到渠成。
 
-Sublime Text is undeniably a versatile tool for programmers, but you don't
-need to be one to use it, or even to configure it to make it the perfect tool
-for your writing. If you're a hacker, however, you are about to spend the
-remainder of your day playing around with this editor.
+Sublime Text 无可否认是程序员的一个多功能工具，但是您不需要作为程序员才能使用它，甚至可以配置它为您写作的完美工具。如果您是一个黑客的话，无论什么程度，您将可以花费您每日剩余的时间来玩转这个编辑器。
 
 
-The *Data* Directory
+*Data* (数据)目录
 ====================
 
-Sublime Text 2 stores nearly all of the interesting files for users under the
-data directory. This is a platform-dependent location:
+Sublime Text 2 几乎会在 data 目录下存储用户感兴趣的所有文件。
+这是一个依赖于平台的位置:
 
 * **Windows**: *%APPDATA%\\Sublime Text 2*
 * **OS X**: *~/Library/Application Support/Sublime Text 2*
 * **Linux**: *~/.config/sublime-text-2*
 
-For **portable installations**, look inside *Sublime Text 2/Data*. Here, the
-*Sublime Text 2* part refers to the directory to which you've extracted the
-contents of the compressed file containing Sublime Text 2.
+对于**便携式安装**，在 *Sublime Text 2/Data* 中查看。在这里，
+*Sublime Text 2* 部分是引用您解压包含 Sublime Text 2 的压缩文件的内容到的目录。
 
-Note that only for portable installations does a directory named *Data* exist.
-For the other types of installation, the data directory is the location
-indicated above.
+注意，只有便携式安装有一个名为 *Data* 的目录存在。
+对于其它类型的安装，data 目录是上面所指的位置。
 
-The *Packages* Directory
+*Packages* (包)目录
 ==============================
 
-This is a **key directory**: all resources for supported programming and
-markup languages are stored here. A *package* is a directory containing
-related files having a special meaning to Sublime Text.
+这是一个**关键目录**: 所有用于支持编程和标记语言的资源都存储在这里。
+一个*包*就是一个包含有对 Sublime Text 有特殊含义的相关文件的一个目录。
 
-You can access the packages directory from the Sublime Text 2 menu
-(**Preferences | Browse Packages...**), or by means of an api call:
-``sublime.packages_path()``. In this guide, we refer to this location as
-*Packages*, *packages path*, *packages folder* or *packages directory*.
+您可以从 Sublime Text 2 菜单 (**Preferences | Browse Packages...**)(首选项|浏览包)来访问包目录，或者通过一个 API 调用的方式:
+``sublime.packages_path()``。在本指南中，我们把这个位置指为
+*Packages*, *包路径*, *包文件夹* 或 *包目录*。
 
-The ``User`` Package
+`User`` (用户)包
 ^^^^^^^^^^^^^^^^^^^^
 
-*Packages/User* is a catch-all directory for custom plugins, snippets,
-macros, etc. Consider it your personal area in the packages folder. Sublime
-Text 2 will never overwrite the contents of *Packages/User* during upgrades.
+*Packages/User* 是一个用于自定义插件、代码段、宏等的总括式目录。
+可以把它视为包文件夹中的您的个人区域。
+Sublime Text 2 在升级时将永远不会覆盖 *Packages/User* 的内容。
 
 
-The Python Console and the Python API
+Python 控制台和 Python API
 =====================================
 
-This information is especially interesting for programmers. For the rest of
-Sublime Text 2 users, you just need to know that Sublime Text enables users
-with programming skills to add their own features to the editor. (So go learn
-how to program; it's great fun!)
+本信息程序员尤其感兴趣。对于其余的 Sublime Text 2 用户来说，您只需要知道 Sublime Text 可以让拥有编程技能的用户添加他们自己的功能到编辑器。(所以呢，去学习一下如何编程吧；这很有趣的!)
 
-Sublime Text 2 comes with an embedded Python interpreter. It's an useful tool
-to inspect Sublime Text 2 settings and to quickly test API calls while you're
-writing plugins.
+Sublime Text 2 配备了一个嵌入式的 Python 解释器。它是一个用于检查 Sublime Text 2 设置并在您编写插件时快速测试 API 调用的实用工具。
 
-To open the Python console, press ``Ctrl+``` or select **View | Show Console**
-in the menu.
+要打开 Python 控制台，按 ``Ctrl+``` 或选择菜单中的 **View | Show Console**(查看|显示控制台)。
 
-Confused? Let's try again more slowly:
+很困惑？让我们慢慢的重试:
 
-*Python* is a programming language known to be easy for beginners and very
-powerful at the same time. *API* is short for ‘Application Programming
-Interface', which is a fancy way of saying that Sublime Text 2 is prepared to
-be programmed by the user. Put differently, Subime Text gives the user access
-to its internals through Python. Lastly, a *console* is a little window inside
-Sublime Text which lets you type in short snippets of Python code and run them.
-The console also shows text output by Sublime Text or its plugins.
+*Python* 是一种编程语言，因对初学者来说简单而同时又非常强大而闻名。
+*API* 是‘Application Programming Interface'(应用程序编程接口)的简称，它是 Sublime Text 2 准备好被用户编程的一种梦幻的说法。
+换句话说，Subime Text 赋予用户通过 Python 访问它的内部。
+最后，*控制台*是 Sublime Text 中的一个小窗口，它让您可以输入一段小的 Python 代码并运行它们。
+控制台也显示由 Sublime Text 或它的插件输出的文本。
 
-Your System's Python vs the Sublime Text 2 Embedded Python
+您的系统的 Python vs Sublime Text 2 的内含 Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-On **Windows** and **Linux**, Sublime Text 2 comes with its own Python
-interpreter and it's separate from your system's Python installation.
+在 **Windows** 和 **Linux** 上，Sublime Text 2 配备了它自己的 Python
+解释器，而且它是独立于您的系统的 Python 安装的。
 
-On **OS X**, the system Python is used instead. Modifying your system version
-of Python, such as replacing it with the MacPorts version, can cause problems
-for Sublime Text.
+在 **OS X** 上，则是使用系统 Python。修改您的 Python 的系统版本，譬如使用 MacPorts 版本替换它，可能会导致 Sublime Text 的问题。
 
-The embedded interpreter is intended only to interact with the plugin API, not
-for general development.
+嵌入的解释器仅仅是为了和插件 API 交换的，不是用于常规开发的。
 
 
-Packages, Plugins, Resources and Other Things That May Not Make Sense to You Now
+Packages(包), Plugins(插件), Resources(资源)和现在对您来说没意思的其它东西
 ================================================================================
 
-For now, just keep in mind that almost everything in Sublime Text can be adapted
-to your needs. This vast flexibility is the reason why you will learn about so
-many settings files: there simply must be a place to specify all your preferences.
+目前，只要记住几乎在 Sublime Text 中的所有东西都可以适合您的需要。
+这个巨大的灵活性就是为何您将要了解这么多设置文件的原因: 简单的说，就是必须有一个地方来让您指定所有的首选项。
 
-Configuration files in Sublime Text let you change the editor's behavior, add
-macros, snippets or create new features --where *feature* means ‘anything you can
-think of'. Ok, maybe not *anything*, but Sublime Text definitely hands you over
-a good deal of control.
+在 Sublime Text 中的配置文件让您可以更改编辑器的行为，添加宏、代码段或创建新功能 --其中*功能*意味着‘您可以想到的任何东西'。好啦，可能不是*任何东西*，但是 Sublime Text 一定给您很多控制。
 
-These settings files are simply text files following a special structure or
-*format*: JSON predominates, but you'll find XML files too.
+这些设置文件就是遵循特定结构或*格式*的简单的文本文件: JSON 为主，但是您也会发现 XML 文件。
 
-In this guide, we refer collectively to all these disparate configuration
-files as *resources*. Sublime Text will look for resources inside the packages
-directory. To keep things tidy, the editor has a notion of a *package*, which
-is a directory containing resources that belong together (maybe they all help
-write emails faster or code in a certain programming language).
+在本指南中，我们统称所有的这些不同的配置文件为*资源*。Sublime Text 将会在包目录中查找资源。要保持整齐，编辑器有一个*包*的概念，它就是一个包含了属于在一起(可能它们全都有助于更快的编写电子邮件或者以一种特定的编程语言编写代码)的资源的一个目录。
 
 
-Textmate Compatibility
+Textmate 兼容
 ======================
 
-This information is mainly useful for Textmate users who are now using Sublime
-Text. Textmate was an editor for the Mac.
+本信息主要对那些现在正在使用 Sublime Text 的 Textmate 用户很有用。Textmate 是 Mac 的一个编辑器。
 
-Sublime Text 2 is fairly compatible with Textmate bundles with the notable
-exception of commands. Additionally, Sublime Text requires all syntax
-definitions to have the *.tmLanguage* extension, and all preferences files to
-have the *.tmPreferences* extension. This means that *.plist* files will be
-ignored, even if they are located under a *Syntaxes* or *Preferences*
-subdirectory.
+Sublime Text 2 和捆绑了 notable exception of commands 的  Textmate 相当兼容。此外，Sublime Text 要求所有的语法定义拥有 *.tmLanguage* 扩展名，而所有首选项文件拥有 *.tmPreferences* 扩展名。这意味着 *.plist* 文件将会被忽略，即使它们位于一个 *Syntaxes* 或 *Preferences*
+子目录下。
 
 
-Vi Emulation
+Vi 模拟
 ============
 
-This information is mainly useful for dinosaurs and people who like to drop
-the term RSI in conversations. Vi is an ancient modal editor that lets the
-user perform all operations from the keyboard. Vim, a modern version of vi,
-is still in widespread use.
+这个信息主要对古老石山和那些喜欢按习惯留在 RSI 中的人有用。
+Vi 是一个古老的模态编辑器，可以让用户从键盘执行所有的操作。
+Vim，是 vi 的一个现代化版本，仍被广泛使用。
 
-Sublime Text provides vi emulation through the *Vintage* package. The Vintage
-package is *ignored* by default. Read more about Vintage_ in the official
-documentation.
+Sublime Text 通过 *Vintage* 包提供了 vi 模拟。
+Vintage 包按默认会*被忽略*。在官方文档中阅读更多关于 Vintage_ 的内容。
 
 .. _Vintage: http://www.sublimetext.com/docs/2/vintage.html
 
@@ -169,19 +125,20 @@ documentation.
 Emacs
 =====
 
-This information is hardly useful for anyone. Emacs is... Well, nobody really
-knows what emacs is, although some people edit text with it.
+本信息几乎对任何人都没有用。
+Emacs 是...
+好吧，没有人真正的知道 emacs 是什么，尽管某些人使用它编辑文本。
 
-If you are an emacs user, you're probably not reading this.
+如果您是一个 emacs 用户的话，您可能不需要阅读这个。
 
 
-Be Sublime, My Friend
+成为 Sublime 吧，我的朋友
 =====================
 
-Borrowing from `Bruce Lee's wisdom`_, Sublime Text can become almost anything
-you need it to be. In skilled hands, it can defeat an army of ninjas without
-your breaking a sweat.
+借用一下 `李小龙的名言`_, Sublime Text 几乎可以变成所有您需要它成为的东西。
+在高手手中，它可以让您毫无费力就可以抵抗忍者战队。
 
 Empty your mind; be sublime, my friend.
+心无杂念；变成 sublime，我的朋友。
 
-.. _Bruce Lee's wisdom: http://www.youtube.com/watch?v=iO3sBulXpVw
+.. _李小龙的名言: http://www.youtube.com/watch?v=iO3sBulXpVw
